@@ -2,6 +2,7 @@
 --type-set=haml=.haml
 --type-set=erb=.erb
 --type-set=js=.js
+--type-set=py=.py
 --type-set=scss=.scss
 --type-set=yml=.yml
 --type-set=coffee=.coffee
@@ -13,3 +14,11 @@
 --yml
 --coffee
 --handlebars
+--py
+
+--ignore-dir=tmp
+--ignore-dir=dist
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=node_modules
+--ignore-dir=bower_components
