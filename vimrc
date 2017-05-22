@@ -15,15 +15,19 @@ map q :tabclose<cr>
 map r :ruby finder.rescan!<CR>
 map k :tabnext<cr>
 map j :tabprevious<cr>
-map - :%!python -m json.tool
+" map - :%!python -m json.tool<cr>
+map ! :%s/[ ]*$//g<cr>
       
 map rrc :so %<cr>
 
 map '  :s,^\(\s*\)[^# \t]\@=,\1#,e<CR>:nohls<CR>zv
 map "  :s,^\(\s*\)#\s\@!,\1,e<CR>:nohls<CR>zv
 
-let g:fuzzy_ignore = "*.svn;*.swp;*.jpg;*.gif;*~;node_modules/**;bower_components/**;tmp/**;vendor/**;dist/**;"
+map # i<CR>import pdb; pdb.set_trace()<CR>
+
+let g:fuzzy_ignore = "*.svn;*.swp;*.jpg;*.gif;*~;node_modules/**;bower_components/**;tmp/**;vendor/**;dist/**;.sass-cache/**;coverage/**"
 let g:fuzzy_ceiling = 1000000
+" let g:fuzzy_path_display = 'full' not working
 
 set nobackup
 
