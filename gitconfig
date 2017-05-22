@@ -3,13 +3,23 @@
 	c = commit
 	st = status
 	l = log --graph --oneline --decorate
+  push = push -u
 
 [color]
     status = auto
     diff = auto
 [user]
 	name = James Crisp
-	email = james@crispdesign.net
+	email = james.crisp@kinesis.org
 
 [push]
 default = current
+[core]
+	excludesfile = /Users/james/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
