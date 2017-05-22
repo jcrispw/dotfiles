@@ -1,4 +1,5 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# eval "$(rbenv init -)"
+
 export JAVA_OPTS="-d32" # make java startup faster
 
 function gitclean() {
@@ -6,7 +7,8 @@ function gitclean() {
   git clean -df
 }
 
-alias "gvim"="rvm use system do gvim"
+#alias "gvim"="rvm use system do gvim"
+alias gvim='mvim'
 
 export EDITOR='rvm use system do gvim'
 
@@ -22,3 +24,12 @@ source ~/.bashrc # has machine specific commands in it, for historical reasons :
 alias ls="ls -GF"
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
+# HAX for Sierra
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+ssh-add -K
+
+# python virtual env
+source "/usr/local/bin/virtualenvwrapper.sh"
+# export WORKON_HOME="~/dev/precinct-data"
+
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
